@@ -446,7 +446,7 @@ class Workflow(object):
             # climb the directory tree until we find `info.plist`
             dirpath = os.path.abspath(os.path.dirname(__file__))
             while True:
-                dirpath = os.path.dirname(dirpath)
+                dirpath = os.path.dirname(dirpath.decode('utf-8'))
                 if os.path.exists(os.path.join(dirpath, 'info.plist')):
                     self._workflowdir = dirpath
                     break
